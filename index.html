@@ -1,0 +1,79 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="uft-8">
+	<title>Coming soon.</title>
+	<link rel="stylesheet" href="styleUnderConstruction.css">
+</head>
+<body>
+<img class="logo" src="logo.png">
+<h1 class="titulo">Coming soon.</h1>
+<div class="container">
+	<div class="progress">
+		<div class="progress-bar" style="width: 10%;"><p>10%</p></div>
+	</div>
+	
+	<div class="contador">
+		<div class="dias">
+			<h3 id="days">3</h3>
+			<small>Days</small>
+		</div>			
+	
+		<div class="horas">
+			<h3 id="hours">12</h3>
+			<small>Hours</small>
+		</div>
+	
+		<div class="minutos">
+			<h3 id="minutes">50</h3>
+			<small>Minutes</small>
+		</div>
+			
+		<div class="segundos">
+			<h3 id="seconds">24</h3>
+			<small>Seconds</small>
+		</div>
+	</div>
+</div>
+<small class="miniTitulo">progress</small>
+
+<ul>
+	<small>Made by StudioFirework. Want a professional website?</small>
+	<li data-text="Get Now"><a href="https://www.fiverr.com/theshoperr/make-you-a-website" target="blank_">Get Now</a></li>
+</ul>
+
+<script>
+	function countdown(){
+		var now = new Date();
+		var eventDate = new Date(2020, 7, 25);
+		
+		var currentTime = now.getTime();
+		var eventTime = eventDate.getTime();
+		
+		var remTime = eventTime - currentTime;
+
+		var s = Math.floor(remTime / 1000);
+		var m = Math.floor(s / 60);
+		var h = Math.floor(m / 60);
+		var d = Math.floor(h / 24);
+		
+		h %= 24;
+		m %= 60;
+		s %= 60;
+		
+		h = (h < 10) ? "0" + h : h;
+		m = (m < 10) ? "0" + m : m;
+		s = (s < 10) ? "0" + s : s;
+		
+		document.getElementById("days").innerText = d;
+		document.getElementById("hours").innerText = h;
+		document.getElementById("minutes").innerText = m;
+		document.getElementById("seconds").innerText = s;
+		
+		setTimeout(countdown, 1000);
+	}
+	
+	countdown();
+</script>
+</body>
+</html>
